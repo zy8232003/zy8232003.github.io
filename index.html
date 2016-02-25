@@ -123,33 +123,57 @@ tip：html不区分大小写，但建议都用小写
 注释方式：<span class="comment">&lt;!-- --&gt;</span>
 </code></pre><h3 id="标签">标签</h3><pre><code><span class="attribute">h1~h6</span>: <span class="string">块级标签，重要性（字体大小）逐渐递减，有默认的margin</span>
 
-<span class="avrasm">em strong: 两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调
+<span class="stata">em strong: 两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调
 
-<span class="label">span:</span> 行级标签
+span: 行级标签
 
-<span class="label">a:</span> 行级标签，有href,title,target三个属性,target表示窗口打开方式，_blank表示在新窗口打开
+a: 行级标签，有href,title,target三个属性,target表示窗口打开方式，_blank表示在新窗口打开
 
-<span class="label">img:</span>具有行级标签特性，但也可与其他标签共存一行，它有src,title,alt三个属性,src指图像的位置，title指提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)，alt指指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本
+img:具有行级标签特性，但也可与其他标签共存一行，它有src,title,alt三个属性,src指图像的位置，title指提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)，alt指指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本
 
-<span class="label">q:</span> 不常用，短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么&lt;q&gt;标签是你所需要的&lt;/q&gt;
+q: 不常用，短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么&lt;q&gt;标签是你所需要的&lt;/q&gt;
 
-<span class="label">blockquote:</span> 同上，指长文本引用
+blockquote: 同上，指长文本引用
 
-<span class="label">br:</span> 单标签，表示换行，没有语义
+<span class="keyword">br</span>: 单标签，表示换行，没有语义
 
-<span class="label">hr:</span> 单标签，表示分割线
+hr: 单标签，表示分割线
 
-<span class="label">address:</span> 为页面加入地址信息 &lt;address&gt;上海市松江区丽德创业园&lt;/address&gt; 样式为斜体
+address: 为页面加入地址信息 &lt;address&gt;上海市松江区丽德创业园&lt;/address&gt; 样式为斜体
 
-<span class="label">code:</span> 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 &lt;code&gt;var i = <span class="number">0</span><span class="comment">;&lt;/code&gt;</span>
+code: 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 &lt;code&gt;<span class="keyword">var</span> i = 0;&lt;/code&gt;
 
-<span class="label">pre:</span> 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签
+pre: 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签
 
 列表: 分为有序列表ol，无序列表ul和自定义列表(dl,dt,dd)三种
 
-表格: table,tbody(不常用),tr(指一行),th(表头),td(单元格),caption(表格标题),summary属性表示表格的摘要，如：&lt;table summary=<span class="string">"hello world!"</span>&gt;&lt;/table&gt;
+表格: <span class="keyword">table</span>,tbody(不常用),tr(指一行),th(表头),td(单元格),caption(表格标题),summary属性表示表格的摘要，如：&lt;<span class="keyword">table</span> summary=<span class="string">"hello world!"</span>&gt;&lt;/<span class="keyword">table</span>&gt;
 
-表单: </span>
+表单: 
+    <span class="keyword">form</span>: 有两个属性，action和method,action指输入的数据被传送到的地址,比如一个PHP页面(<span class="keyword">test</span>.php)，method指数据传送的方式（get/<span class="keyword">post</span>）
+<span class="keyword">input</span>: 有<span class="keyword">type</span>，name，value，checked，required等属性，其中<span class="keyword">type</span>属性又分为text，password，button，submit，checkbox，telephone，email，number，<span class="keyword">search</span>，reset，hidden，radio（单选框）等
+    注意：同一组的单选按钮，name取值一定要一致，这样同一组的单选按钮才可以起到单选的作用
+
+<span class="keyword">label</span>: 为 <span class="keyword">input</span> 元素定义标注（标记）
+    <span class="keyword">label</span> 元素不会向用户呈现任何特殊的样式。不过，它为鼠标用户改善了可用性，因为如果用户点击 <span class="keyword">label</span> 元素内的文本，则会切换到控件本身。也就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上
+
+标签的<span class="keyword">for</span>属性可把 <span class="keyword">label</span> 绑定到另外一个元素。请把 <span class="string">"for"</span> 属性的值设置为相关元素的 id 属性的值，如：
+&lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"male"</span>&gt;Male&lt;/<span class="keyword">label</span>&gt;
+&lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"radio"</span> name=<span class="string">"sex"</span> id=<span class="string">"male"</span>/&gt;
+
+textarea: 文本域，可以自由拖拽大小，用resize可去掉
+
+cols属性和rows属性: 指多行输入域的列数和行数
+
+select，option: 是一套组合标签，表示下拉列表框，有mutiple属性，可以实现多选功能
+
+video:    视频标签，有src和controls，autoplay，loop，preload等属性
+    src指要播放的视频的 URL
+    controls指向用户显示控件，比如播放按钮
+    autoplay指频在就绪后马上播放
+    loop指当媒介文件完成播放后再次开始播放
+    preload指视频在页面加载时进行加载，并预备播放（如果使用 <span class="string">"autoplay"</span>，则忽略该属性）
+audio: 音频标签，他也有src和controls，autoplay，loop，preload等属性，用法同上</span>
 </code></pre>
         
         
