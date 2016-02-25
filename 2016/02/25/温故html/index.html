@@ -19,11 +19,11 @@ head里面包含title标签（必须），meta标签
 
 meta标签包含name属性和content属性
 
-&amp;lt; meta name=”Description” content=””/&amp;gt;
+&amp;lt;meta name=&quot;Description&quot; content=&quot;&quot;/&amp;gt;
 
-&amp;lt; meta name=”robots” content=”none”/&amp;gt;
+&amp;lt;meta name=&quot;robots&quot; content=&quot;none&quot;/&amp;gt;
 
-&amp;lt; meta http">
+&amp;lt;meta http-eq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="温故html">
 <meta property="og:url" content="http://yoursite.com/2016/02/25/温故html/index.html">
@@ -36,12 +36,12 @@ head里面包含title标签（必须），meta标签
 
 meta标签包含name属性和content属性
 
-&amp;lt; meta name=”Description” content=””/&amp;gt;
+&amp;lt;meta name=&quot;Description&quot; content=&quot;&quot;/&amp;gt;
 
-&amp;lt; meta name=”robots” content=”none”/&amp;gt;
+&amp;lt;meta name=&quot;robots&quot; content=&quot;none&quot;/&amp;gt;
 
-&amp;lt; meta http">
-<meta property="og:updated_time" content="2016-02-25T12:11:09.000Z">
+&amp;lt;meta http-eq">
+<meta property="og:updated_time" content="2016-02-25T12:15:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="温故html">
 <meta name="twitter:description" content="html知识点html的基本结构html：根标签
@@ -52,11 +52,11 @@ head里面包含title标签（必须），meta标签
 
 meta标签包含name属性和content属性
 
-&amp;lt; meta name=”Description” content=””/&amp;gt;
+&amp;lt;meta name=&quot;Description&quot; content=&quot;&quot;/&amp;gt;
 
-&amp;lt; meta name=”robots” content=”none”/&amp;gt;
+&amp;lt;meta name=&quot;robots&quot; content=&quot;none&quot;/&amp;gt;
 
-&amp;lt; meta http">
+&amp;lt;meta http-eq">
 
     
     <link rel="alternative" href="/atom.xml" title="Memory" type="application/atom+xml">
@@ -136,68 +136,63 @@ meta标签包含name属性和content属性
 		
 		</div>
 		
-		<h1 id="html知识点">html知识点</h1><h3 id="html的基本结构">html的基本结构</h3><pre><code><span class="label">html</span>：根标签
+		<h1 id="html知识点">html知识点</h1><h3 id="html的基本结构">html的基本结构</h3><pre><code>html：根标签
 
-<span class="label">head</span>部分和<span class="keyword">body部分
-</span>
-<span class="label">head</span>里面包含title标签（必须），meta标签
-</code></pre><ul>
-<li><p>meta标签包含name属性和content属性</p>
-</li>
-<li><p>&lt; meta name=”Description” content=””/&gt;</p>
-</li>
-<li><p>&lt; meta name=”robots” content=”none”/&gt;</p>
-</li>
-<li><p>&lt; meta http-equiv content=”3 url’www.baidu.com’”/&gt;</p>
-</li>
-<li><p>&lt; meta name=”author” content=”姓名”/&gt;</p>
-</li>
-<li><p>&lt; meta name=”viewport” content=”width=device-width,initial-         scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no” /&gt;</p>
-</li>
-<li><p>&lt; meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1” /&gt;</p>
-</li>
-<li><p>&lt; meta name=”renderer” content=”webkit|ie-comp|ie-stand”&gt;</p>
-</li>
-<li><p>&lt; meta name=”apple-mobile-web-app-title”content=”标题”&gt;</p>
-</li>
-<li><p>tip：html不区分大小写，但建议都用小写</p>
-</li>
-<li><p>注释方式：<!-- --></p>
-</li>
-</ul>
-<h3 id="标签">标签</h3><h4 id="标题标签">标题标签</h4><ul>
-<li><p>h1~h6: 块级标签，重要性（字体大小）逐渐递减，有默认的margin</p>
-</li>
-<li><p>em strong: 两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调</p>
-</li>
-<li><p>span: 行级标签</p>
-</li>
-<li><p>a: 行级标签，有href,title,target三个属性,target表示窗口打开方式，_blank表示在新窗口打开</p>
-</li>
-<li><p>img:具有行级标签特性，但也可与其他标签共存一行，它有src,title,alt三个属性,src指图像的位置，title指提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)，alt指指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本</p>
-</li>
-<li><p>q: 不常用，短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么&lt; q&gt;标签是你所需要的&lt; /q&gt;</p>
-</li>
-<li><p>blockquote: 同上，指长文本引用</p>
-</li>
-<li><p>br: 单标签，表示换行，没有语义</p>
-</li>
-<li><p>hr: 单标签，表示分割线</p>
-</li>
-<li><p>address: 为页面加入地址信息 &lt; address&gt;上海市松江区丽德创业园&lt; /address&gt; 样式为斜体</p>
-</li>
-<li><p>code: 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 &lt; code&gt;var i = 0;&lt; /code&gt;</p>
-</li>
-<li><p>pre: 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签</p>
-</li>
-<li><p>列表: 分为有序列表ol，无序列表ul和自定义列表(dl,dt,dd)三种</p>
-</li>
-<li><p>表格: table,tbody(不常用),tr(指一行),th(表头),td(单元格),caption(表格标题),summary属性表示表格的摘要，如：&lt; table summary=”hello world!”&gt;&lt;/ table&gt;</p>
-</li>
-<li><p>表单</p>
-</li>
-</ul>
-  
+head部分和body部分
+
+head里面包含title标签（必须），meta标签
+
+meta标签包含name属性和content属性
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"Description"</span> <span class="attribute">content</span>=<span class="value">""</span>/&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"robots"</span> <span class="attribute">content</span>=<span class="value">"none"</span>/&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span> <span class="attribute">content</span>=<span class="value">"3 url'www.baidu.com'"</span>/&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"author"</span> <span class="attribute">content</span>=<span class="value">"姓名"</span>/&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width,initial-         scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1” /&gt;
+
+&lt;meta name="</span><span class="value">renderer"</span> <span class="attribute">content</span>=<span class="value">"webkit|ie-comp|ie-stand"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"apple-mobile-web-app-title"</span><span class="value">content="标题"</span>&gt;</span>
+
+tip：html不区分大小写，但建议都用小写
+
+注释方式：<span class="comment">&lt;!-- --&gt;</span>
+</code></pre><h3 id="标签">标签</h3><h4 id="标题标签">标题标签</h4><pre><code><span class="attribute">h1~h6</span>: <span class="string">块级标签，重要性（字体大小）逐渐递减，有默认的margin</span>
+
+<span class="avrasm">em strong: 两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调
+
+<span class="label">span:</span> 行级标签
+
+<span class="label">a:</span> 行级标签，有href,title,target三个属性,target表示窗口打开方式，_blank表示在新窗口打开
+
+<span class="label">img:</span>具有行级标签特性，但也可与其他标签共存一行，它有src,title,alt三个属性,src指图像的位置，title指提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)，alt指指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本
+
+<span class="label">q:</span> 不常用，短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么&lt;q&gt;标签是你所需要的&lt;/q&gt;
+
+<span class="label">blockquote:</span> 同上，指长文本引用
+
+<span class="label">br:</span> 单标签，表示换行，没有语义
+
+<span class="label">hr:</span> 单标签，表示分割线
+
+<span class="label">address:</span> 为页面加入地址信息 &lt;address&gt;上海市松江区丽德创业园&lt;/address&gt; 样式为斜体
+
+<span class="label">code:</span> 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 &lt;code&gt;var i = <span class="number">0</span><span class="comment">;&lt;/code&gt;</span>
+
+<span class="label">pre:</span> 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签
+
+列表: 分为有序列表ol，无序列表ul和自定义列表(dl,dt,dd)三种
+
+表格: table,tbody(不常用),tr(指一行),th(表头),td(单元格),caption(表格标题),summary属性表示表格的摘要，如：&lt;table summary=<span class="string">"hello world!"</span>&gt;&lt;/table&gt;
+
+表单: </span>
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
