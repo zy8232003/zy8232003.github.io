@@ -81,6 +81,212 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/02/26/CSS-beta版/" title="温习CSS" itemprop="url">温习CSS</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zhang Yue" target="_blank" itemprop="author">Zhang Yue</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-26T01:31:02.000Z" itemprop="datePublished"> 發表於 2016-02-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="css样式表的三种调用方式：">css样式表的三种调用方式：</h3><pre><code>1. style标签引入：把CSS样式表放到<span class="variable">&lt;head&gt;</span>文档中，如：<span class="variable">&lt;style&gt;</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/style&gt;</span>
+<span class="keyword">*</span> 缺点：不利于复用，适用于单页面的场景
+
+2. 行间样式（标签内部引入），如：<span class="variable">&lt;h1 style="color:red"&gt;</span><span class="variable">&lt;/h1&gt;</span>
+<span class="keyword">*</span> 优点：优先级高，不会被其他样式覆盖和影响
+<span class="keyword">*</span> 缺点：没有样式内容分离，不利于代码的维护，影响阅读体验
+
+3. 外部引用css文件：<span class="variable">&lt;link rel=stylesheet type="text/css" href="***"/&gt;</span>
+<span class="keyword">*</span> 优点：实现了内容和样式的分离，代码利于维护，可以被复用
+<span class="keyword">*</span> 缺点：增加了一次请求
+
+三者的优先级从高到低：行间样式--外部引用--style标签引入
+<span class="comment">@import：url("***"): 在css里面再添加一个css请求</span>
+</code></pre><h3 id="css选择器的分类：">css选择器的分类：</h3><pre><code>id选择器，类选择器，标签选择器，通配选择器，层级选择器（子集选择器，它只会找到下一代所有的子集，而不会找孙子集），群组选择器，伪类选择器，属性选择起（input[<span class="built_in">type</span>="text"]），伪元素选择器（::）
+
+他们的优先级数序由低到高：伪类--属性--通配--标签--类--id，层级，群组，important权重最高
+
+单位：px、%、em、<span class="comment">rem、vh和vw(视窗单位  vh等于viewport高度的1/100.例如，如果浏览器的高是900px,1vh求得的值为9px。同理，如果显示窗口宽度为750px,1vw求得的值为7.5px)</span>
+</code></pre><h3 id="css属性">css属性</h3><pre><code><span class="attribute">font</span><span class="value">: 字体
+    font-size
+    font-weight：bold
+    font-family：<span class="string">"Tohoma"</span> Arial sans-serif
+    line-height
+    text-decoration：none    去掉文字下划线
+    word-spacing: 控制单词间的间距（如：word-spcing: <span class="number">5px</span>）
+    letter-spacing：控制字符间的间距
+    简写方式：font：<span class="number">16px</span>/<span class="number">1.5</span> <span class="string">'Tohoma'</span> Arial sans-serif ;</span>
+
+<span class="attribute">line-height</span><span class="value">: 分为顶线，基线和底线
+行高指的是文本行的基线间的距离。
+基线并不是汉字的下端沿，而是英文字母<span class="string">"x"</span>的下端沿
+
+color: 颜色
+    可以颜色关键字、<span class="function">rgb</span>(a)、<span class="number">16</span>进制，（部分<span class="number">16</span>进制颜色可以缩写，如<span class="hexcolor">#000000</span>可缩写成<span class="hexcolor">#000</span>）和hsl    
+    aqua fuchsia lime olive red white black gray maroon orange silver yellow blue green navy purple teal
+
+background：背景
+    分为background-color，background-position，background-image，background-repeat，background-attachment（：fixed，背景图固定）
+    缩写方式：background：<span class="hexcolor">#fff</span> <span class="function">url</span>(<span class="string">"***"</span>) <span class="number">0</span> <span class="number">0</span> no-repeat <span class="function">fixed</span>(不常用);</span>
+
+<span class="attribute">border</span>：边框
+    分为<span class="attribute">border-width</span>，<span class="attribute">border-color</span>和<span class="attribute">border-style</span>，通常简写成<span class="attribute">border</span>，如：<span class="attribute">border</span>：1px red <span class="value">solid</span>，顺序可按个人喜好而定
+
+<span class="attribute">padding</span>和<span class="attribute">margin</span>
+    属性值可写成像素、<span class="tag">em</span>（rem）和百分比
+    缩写形式遵循TRBL法则
+    <span class="attribute">margin</span>：0 <span class="attribute">auto</span> 可使块级元素水平居中
+
+<span class="attribute">display</span>
+    分为<span class="value">block</span>，<span class="value">inline</span>和<span class="value">inline</span>-<span class="value">block</span>三种
+
+<span class="tag">ol</span>和<span class="tag">ul</span>列表
+    <span class="attribute">list-style-type</span>：<span class="attribute">none</span> 去掉列表前的标志
+
+
+水平居中方式
+    文本居中：<span class="attribute">text-align</span><span class="value">: center
+    block元素居中：margin: <span class="number">0</span> auto
+
+垂直居中方式：
+    文本： line-height： <span class="number">10px</span>（数值与元素高度一致）
+    block元素：display：table-cell;</span> verticle-align：<span class="value">middle</span>
+</code></pre><h3 id="属性继承：">属性继承：</h3><pre><code>同一选择器被不同样式定义，那么某些属性值会被继承，如：<span class="attribute">color</span>会继承外部样式，而<span class="attribute">text-align</span>和<span class="attribute">font-size</span>则继承内部样式
+
+不可继承的：<span class="attribute">display</span>、<span class="attribute">margin</span>、<span class="attribute">border</span>、<span class="attribute">padding</span>、<span class="attribute">background</span>、<span class="attribute">height</span>、<span class="attribute">min-height</span>、<span class="attribute">max-height</span>、<span class="attribute">width</span>、<span class="attribute">min-width</span>、<span class="attribute">max-width</span>、<span class="attribute">overflow</span>、<span class="attribute">position</span>、<span class="attribute">left</span>、<span class="attribute">right</span>、<span class="attribute">top</span>、<span class="attribute">bottom</span>、<span class="attribute">z-index</span>、<span class="attribute">float</span>、<span class="attribute">clear</span>、<span class="attribute">table-layout</span>、<span class="attribute">vertical-align</span>、<span class="attribute">page-break-after</span>、page-bread-before和<span class="attribute">unicode-bidi</span>。
+
+所有元素可继承：<span class="attribute">visibility</span>和<span class="attribute">cursor</span>。
+
+内联元素可继承：<span class="attribute">letter-spacing</span>、<span class="attribute">word-spacing</span>、<span class="attribute">white-space</span>、<span class="attribute">line-height</span>、<span class="attribute">color</span>、<span class="attribute">font</span>、<span class="attribute">font-family</span>、<span class="attribute">font-size</span>、<span class="attribute">font-style</span>、<span class="attribute">font-variant</span>、<span class="attribute">font-weight</span>、<span class="attribute">text-decoration</span>、<span class="attribute">text-transform</span>、<span class="attribute">direction</span>。
+
+终端块状元素可继承：<span class="attribute">text-indent</span>和<span class="attribute">text-align</span>。
+
+列表元素可继承：<span class="attribute">list-style</span>、<span class="attribute">list-style-type</span>、<span class="attribute">list-style-position</span>、<span class="attribute">list-style-image</span>。
+
+表格元素可继承：<span class="attribute">border-collapse</span>。
+</code></pre><h3 id="布局">布局</h3><pre><code><span class="attribute">float</span>布局
+    分为<span class="attribute">left</span>、<span class="attribute">right</span>和<span class="attribute">none</span>三种
+    <span class="attribute">overflow</span>属性分为<span class="value">visible</span>，<span class="value">scroll</span>，<span class="value">hidden</span>，<span class="attribute">auto</span>等
+
+    清除浮动：
+        * <span class="attribute">clear</span>：<span class="attribute">left</span>（<span class="value">both</span>）
+        * 给父级<span class="tag">div</span>定义<span class="attribute">overflow</span>：<span class="value">hidden</span>
+        * 给父级<span class="tag">div</span>增加高度
+
+<span class="attribute">position</span>布局
+    分为<span class="value">relative</span>、<span class="value">absolute</span>和<span class="value">fixed</span>几种，默认值为<span class="value">static</span>
+    realtive：相对自身当前位置上下左右，值可以为负数，可以对块，行标签使用，不会改变标签属性
+    <span class="value">absolute</span>：如果没有父级标签设置<span class="value">relative</span>；当前标签元素是以<span class="tag">body</span>可视区域为起点。如果有父级设置<span class="value">relative</span>，则以父级标签为起点。（脱离文档流，改变标签的属性，类似于<span class="value">inline</span>-<span class="value">block</span>的特性）
+    <span class="value">fixed</span>：表示固定定位
+    <span class="attribute">z-index</span>：1，表示当前标签的层级，当前标签必须使用<span class="attribute">position</span>属性才有效果，取值为数字，不能为负数
+
+<span class="attribute">flex</span>布局：弹性布局
+    使用前需先给容器设置<span class="attribute">display</span>：<span class="attribute">flex</span>
+    属性（容器）：
+        1<span class="class">.flex-direction</span>(伸缩方向)<span class="value">:
+          row（主轴为水平方向，起点在左端）
+          row-reverse（主轴为水平方向，起点在右端）
+          column（主轴为垂直方向，起点在上沿）
+          column-reverse（主轴为垂直方向，起点在下沿）
+        <span class="number">2</span>.flex-wrap:
+              nowrap: 不换行
+              wrap: 换行
+              wrap-reverse： 从下向上换行
+        <span class="number">3</span>.flex-flow：前两个的缩写格式
+        <span class="number">4</span>.<span class="function">justify-content</span>(主轴对齐方式):
+             flex-start    (左对齐)
+             flex-end     (右对齐)
+             center     (居中)
+             space-between     (两端对齐，项目之间的间隔都相等)
+             space-around     (每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍)
+             <span class="function">align-items</span>(交叉轴对齐方式)：
+             flex-start:     (交叉轴的起点对齐)
+             flex-end:     (交叉轴的终点对齐)
+             center:     (交叉轴的中点对齐)
+             baseline:     (项目的第一行文字的基线对齐)
+             stretch:     (如果项目未设置高度或设为auto，将占满整个容器的高度)
+             align-content:     定义了多根轴线的对齐方式，如果项目只有一个轴线，该属性不起作用
+             flex-start:     与交叉轴的起点对齐
+             flex-end:     与交叉轴的终点对齐
+             center:     与交叉轴的中点对齐
+             space-between:     与交叉轴两端对齐，轴线之间的间隔平均分布
+             space-around:     每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+             stretch:     轴线占满整个交叉轴
+
+    属性（项目）：
+          order: 属性定义项目的排列顺序，数值越小，排列越靠前，默认为<span class="number">0</span>。
+          flex-grow: 属性定义项目的放大比例，默认为<span class="number">0</span>，如果空间剩余，该项目讲放大。
+          flex-shrink: 属性定义项目的缩小比例，默认为<span class="number">1</span>，如果空间不足，该项目将缩小。
+          flex-basis: 属性定义了再分配多余空间之前，项目占据的主轴空间，默认值为<span class="number">0</span>，可设固定宽高
+          flex: 前三个属性的缩写，默认值为(<span class="number">0</span>,<span class="number">1</span>,auto),后两个属性可选
+          align-self: 属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性，默认为auto，继承父级，如果没有父级，则等同于stretch</span>
+</code></pre><p>###BFC</p>
+<pre><code>简介：
+FC全称”Formatting Context”, 中文为“格式化上下文”
+BFC全称”<span class="value">Block</span> Formatting Context”, 中文为“块级格式化上下文”
+IFC全称”<span class="value">Block</span> Formatting Context”, 中文为“行级格式化上下文”
+
+BFC的生成
+满足下列CSS声明之一的元素便会生成BFC：
+  根元素
+    * <span class="attribute">float</span>的值不为<span class="attribute">none</span>
+    * <span class="attribute">overflow</span>的值不为<span class="value">visible</span>
+    * <span class="attribute">display</span>的值为<span class="value">inline</span>-<span class="value">block</span>、<span class="tag">table</span>-cell、<span class="tag">table</span>-<span class="tag">caption</span>
+    * <span class="attribute">position</span>的值为<span class="value">absolute</span>或<span class="value">fixed</span>
+
+BFC的约束规则
+生成BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的<span class="attribute">margin</span>特性。在BFC中相邻的块级元素外边距会折叠。
+生成BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）
+内部的Box会在垂直方向上一个接一个的放置
+垂直方向上的距离由<span class="attribute">margin</span>决定。（完整的说法是：属于同一个BFC的两个相邻Box的<span class="attribute">margin</span>会发生重叠，与方向无关。）
+每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而<span class="attribute">position</span>为<span class="value">absolute</span>的元素可以超出他的包含块边界）
+BFC的区域不会与<span class="attribute">float</span>的元素区域重叠
+计算BFC的高度时，浮动子元素也参与计算
+BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/02/26/CSS-beta版/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/02/25/温故html/" title="温习html" itemprop="url">温习html</a>
   </h1>
   <p class="article-author">By
@@ -283,62 +489,6 @@ audio: 音频标签，他也有src和controls，autoplay，loop，preload等属�
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/28/JS食用指南/" title="JS食用指南" itemprop="url">JS食用指南</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zhang Yue" target="_blank" itemprop="author">Zhang Yue</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-28T09:21:59.000Z" itemprop="datePublished"> 發表於 2015-11-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="招牌菜：JavaScript"><strong>招牌菜</strong>：JavaScript</h2><pre><code>它是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。
-</code></pre><h3 id="食用方法">食用方法</h3><p>1.<strong>页面嵌入方式</strong>：<br>    一般放在&lt; head&gt;与&lt; /head&gt;之间。<br>2.<strong>外部引用方式</strong>：<br>    &lt; script type=”text/javascript” src=”xxx.js”&gt;&lt; /script&gt;，xxx.js为要引用的js文件。</p>
-<h3 id="主要食材">主要食材</h3><pre><code>函数，变量，数组，<span class="keyword">for</span>循环，<span class="keyword">if</span>语句
-</code></pre><h3 id="食品分类">食品分类</h3><p><strong>基础数据类型</strong>：<br>1.String          字符串类型<br>2.Boolean         布尔类型（开关）  两个值：true，false<br>3.Number          数字类型<br>4.Null            空类型<br>5.Undefined       undefined空类型（未定义）<br>6.Object             对象类型</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/11/28/JS食用指南/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2015/11/28/hello-world/" title="Hello World" itemprop="url">Hello World</a>
   </h1>
   <p class="article-author">By
@@ -381,6 +531,62 @@ audio: 音频标签，他也有src和controls，autoplay，loop，preload等属�
 	
 	  	<span></span>
 		<a href="/2015/11/28/hello-world/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/28/JS食用指南/" title="JS食用指南" itemprop="url">JS食用指南</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zhang Yue" target="_blank" itemprop="author">Zhang Yue</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-28T09:21:59.000Z" itemprop="datePublished"> 發表於 2015-11-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="招牌菜：JavaScript"><strong>招牌菜</strong>：JavaScript</h2><pre><code>它是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。
+</code></pre><h3 id="食用方法">食用方法</h3><p>1.<strong>页面嵌入方式</strong>：<br>    一般放在&lt; head&gt;与&lt; /head&gt;之间。<br>2.<strong>外部引用方式</strong>：<br>    &lt; script type=”text/javascript” src=”xxx.js”&gt;&lt; /script&gt;，xxx.js为要引用的js文件。</p>
+<h3 id="主要食材">主要食材</h3><pre><code>函数，变量，数组，<span class="keyword">for</span>循环，<span class="keyword">if</span>语句
+</code></pre><h3 id="食品分类">食品分类</h3><p><strong>基础数据类型</strong>：<br>1.String          字符串类型<br>2.Boolean         布尔类型（开关）  两个值：true，false<br>3.Number          数字类型<br>4.Null            空类型<br>5.Undefined       undefined空类型（未定义）<br>6.Object             对象类型</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/11/28/JS食用指南/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 

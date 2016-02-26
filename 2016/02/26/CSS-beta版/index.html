@@ -1,0 +1,797 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>温习CSS | Memory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zhang Yue">
+    
+
+    
+    <meta name="description" content="css样式表的三种调用方式：1. style标签引入：把CSS样式表放到&amp;lt;head&amp;gt;文档中，如：&amp;lt;style&amp;gt;***&amp;lt;/style&amp;gt;
+* 缺点：不利于复用，适用于单页面的场景
+
+2. 行间样式（标签内部引入），如：&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;&amp;lt;/h1&amp;gt;
+* 优点：优先级高，不会被其他样式覆盖和影响
+* 缺点：没有样式内容分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="温习CSS">
+<meta property="og:url" content="http://yoursite.com/2016/02/26/CSS-beta版/index.html">
+<meta property="og:site_name" content="Memory">
+<meta property="og:description" content="css样式表的三种调用方式：1. style标签引入：把CSS样式表放到&amp;lt;head&amp;gt;文档中，如：&amp;lt;style&amp;gt;***&amp;lt;/style&amp;gt;
+* 缺点：不利于复用，适用于单页面的场景
+
+2. 行间样式（标签内部引入），如：&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;&amp;lt;/h1&amp;gt;
+* 优点：优先级高，不会被其他样式覆盖和影响
+* 缺点：没有样式内容分">
+<meta property="og:updated_time" content="2016-02-26T13:39:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="温习CSS">
+<meta name="twitter:description" content="css样式表的三种调用方式：1. style标签引入：把CSS样式表放到&amp;lt;head&amp;gt;文档中，如：&amp;lt;style&amp;gt;***&amp;lt;/style&amp;gt;
+* 缺点：不利于复用，适用于单页面的场景
+
+2. 行间样式（标签内部引入），如：&amp;lt;h1 style=&quot;color:red&quot;&amp;gt;&amp;lt;/h1&amp;gt;
+* 优点：优先级高，不会被其他样式覆盖和影响
+* 缺点：没有样式内容分">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Memory" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Memory" title="Memory"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Memory">Memory</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/26/CSS-beta版/" title="温习CSS" itemprop="url">温习CSS</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zhang Yue" target="_blank" itemprop="author">Zhang Yue</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-26T01:31:02.000Z" itemprop="datePublished"> 發表於 2016-02-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#css样式表的三种调用方式："><span class="toc-number">1.</span> <span class="toc-text">css样式表的三种调用方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css选择器的分类："><span class="toc-number">2.</span> <span class="toc-text">css选择器的分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css属性"><span class="toc-number">3.</span> <span class="toc-text">css属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性继承："><span class="toc-number">4.</span> <span class="toc-text">属性继承：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局"><span class="toc-number">5.</span> <span class="toc-text">布局</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="css样式表的三种调用方式：">css样式表的三种调用方式：</h3><pre><code>1. style标签引入：把CSS样式表放到<span class="variable">&lt;head&gt;</span>文档中，如：<span class="variable">&lt;style&gt;</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/style&gt;</span>
+<span class="keyword">*</span> 缺点：不利于复用，适用于单页面的场景
+
+2. 行间样式（标签内部引入），如：<span class="variable">&lt;h1 style="color:red"&gt;</span><span class="variable">&lt;/h1&gt;</span>
+<span class="keyword">*</span> 优点：优先级高，不会被其他样式覆盖和影响
+<span class="keyword">*</span> 缺点：没有样式内容分离，不利于代码的维护，影响阅读体验
+
+3. 外部引用css文件：<span class="variable">&lt;link rel=stylesheet type="text/css" href="***"/&gt;</span>
+<span class="keyword">*</span> 优点：实现了内容和样式的分离，代码利于维护，可以被复用
+<span class="keyword">*</span> 缺点：增加了一次请求
+
+三者的优先级从高到低：行间样式--外部引用--style标签引入
+<span class="comment">@import：url("***"): 在css里面再添加一个css请求</span>
+</code></pre><h3 id="css选择器的分类：">css选择器的分类：</h3><pre><code>id选择器，类选择器，标签选择器，通配选择器，层级选择器（子集选择器，它只会找到下一代所有的子集，而不会找孙子集），群组选择器，伪类选择器，属性选择起（input[<span class="built_in">type</span>="text"]），伪元素选择器（::）
+
+他们的优先级数序由低到高：伪类--属性--通配--标签--类--id，层级，群组，important权重最高
+
+单位：px、%、em、<span class="comment">rem、vh和vw(视窗单位  vh等于viewport高度的1/100.例如，如果浏览器的高是900px,1vh求得的值为9px。同理，如果显示窗口宽度为750px,1vw求得的值为7.5px)</span>
+</code></pre><h3 id="css属性">css属性</h3><pre><code><span class="attribute">font</span><span class="value">: 字体
+    font-size
+    font-weight：bold
+    font-family：<span class="string">"Tohoma"</span> Arial sans-serif
+    line-height
+    text-decoration：none    去掉文字下划线
+    word-spacing: 控制单词间的间距（如：word-spcing: <span class="number">5px</span>）
+    letter-spacing：控制字符间的间距
+    简写方式：font：<span class="number">16px</span>/<span class="number">1.5</span> <span class="string">'Tohoma'</span> Arial sans-serif ;</span>
+
+<span class="attribute">line-height</span><span class="value">: 分为顶线，基线和底线
+行高指的是文本行的基线间的距离。
+基线并不是汉字的下端沿，而是英文字母<span class="string">"x"</span>的下端沿
+
+color: 颜色
+    可以颜色关键字、<span class="function">rgb</span>(a)、<span class="number">16</span>进制，（部分<span class="number">16</span>进制颜色可以缩写，如<span class="hexcolor">#000000</span>可缩写成<span class="hexcolor">#000</span>）和hsl    
+    aqua fuchsia lime olive red white black gray maroon orange silver yellow blue green navy purple teal
+
+background：背景
+    分为background-color，background-position，background-image，background-repeat，background-attachment（：fixed，背景图固定）
+    缩写方式：background：<span class="hexcolor">#fff</span> <span class="function">url</span>(<span class="string">"***"</span>) <span class="number">0</span> <span class="number">0</span> no-repeat <span class="function">fixed</span>(不常用);</span>
+
+<span class="attribute">border</span>：边框
+    分为<span class="attribute">border-width</span>，<span class="attribute">border-color</span>和<span class="attribute">border-style</span>，通常简写成<span class="attribute">border</span>，如：<span class="attribute">border</span>：1px red <span class="value">solid</span>，顺序可按个人喜好而定
+
+<span class="attribute">padding</span>和<span class="attribute">margin</span>
+    属性值可写成像素、<span class="tag">em</span>（rem）和百分比
+    缩写形式遵循TRBL法则
+    <span class="attribute">margin</span>：0 <span class="attribute">auto</span> 可使块级元素水平居中
+
+<span class="attribute">display</span>
+    分为<span class="value">block</span>，<span class="value">inline</span>和<span class="value">inline</span>-<span class="value">block</span>三种
+
+<span class="tag">ol</span>和<span class="tag">ul</span>列表
+    <span class="attribute">list-style-type</span>：<span class="attribute">none</span> 去掉列表前的标志
+
+
+水平居中方式
+    文本居中：<span class="attribute">text-align</span><span class="value">: center
+    block元素居中：margin: <span class="number">0</span> auto
+
+垂直居中方式：
+    文本： line-height： <span class="number">10px</span>（数值与元素高度一致）
+    block元素：display：table-cell;</span> verticle-align：<span class="value">middle</span>
+</code></pre><h3 id="属性继承：">属性继承：</h3><pre><code>同一选择器被不同样式定义，那么某些属性值会被继承，如：<span class="attribute">color</span>会继承外部样式，而<span class="attribute">text-align</span>和<span class="attribute">font-size</span>则继承内部样式
+
+不可继承的：<span class="attribute">display</span>、<span class="attribute">margin</span>、<span class="attribute">border</span>、<span class="attribute">padding</span>、<span class="attribute">background</span>、<span class="attribute">height</span>、<span class="attribute">min-height</span>、<span class="attribute">max-height</span>、<span class="attribute">width</span>、<span class="attribute">min-width</span>、<span class="attribute">max-width</span>、<span class="attribute">overflow</span>、<span class="attribute">position</span>、<span class="attribute">left</span>、<span class="attribute">right</span>、<span class="attribute">top</span>、<span class="attribute">bottom</span>、<span class="attribute">z-index</span>、<span class="attribute">float</span>、<span class="attribute">clear</span>、<span class="attribute">table-layout</span>、<span class="attribute">vertical-align</span>、<span class="attribute">page-break-after</span>、page-bread-before和<span class="attribute">unicode-bidi</span>。
+
+所有元素可继承：<span class="attribute">visibility</span>和<span class="attribute">cursor</span>。
+
+内联元素可继承：<span class="attribute">letter-spacing</span>、<span class="attribute">word-spacing</span>、<span class="attribute">white-space</span>、<span class="attribute">line-height</span>、<span class="attribute">color</span>、<span class="attribute">font</span>、<span class="attribute">font-family</span>、<span class="attribute">font-size</span>、<span class="attribute">font-style</span>、<span class="attribute">font-variant</span>、<span class="attribute">font-weight</span>、<span class="attribute">text-decoration</span>、<span class="attribute">text-transform</span>、<span class="attribute">direction</span>。
+
+终端块状元素可继承：<span class="attribute">text-indent</span>和<span class="attribute">text-align</span>。
+
+列表元素可继承：<span class="attribute">list-style</span>、<span class="attribute">list-style-type</span>、<span class="attribute">list-style-position</span>、<span class="attribute">list-style-image</span>。
+
+表格元素可继承：<span class="attribute">border-collapse</span>。
+</code></pre><h3 id="布局">布局</h3><pre><code><span class="attribute">float</span>布局
+    分为<span class="attribute">left</span>、<span class="attribute">right</span>和<span class="attribute">none</span>三种
+    <span class="attribute">overflow</span>属性分为<span class="value">visible</span>，<span class="value">scroll</span>，<span class="value">hidden</span>，<span class="attribute">auto</span>等
+
+    清除浮动：
+        * <span class="attribute">clear</span>：<span class="attribute">left</span>（<span class="value">both</span>）
+        * 给父级<span class="tag">div</span>定义<span class="attribute">overflow</span>：<span class="value">hidden</span>
+        * 给父级<span class="tag">div</span>增加高度
+
+<span class="attribute">position</span>布局
+    分为<span class="value">relative</span>、<span class="value">absolute</span>和<span class="value">fixed</span>几种，默认值为<span class="value">static</span>
+    realtive：相对自身当前位置上下左右，值可以为负数，可以对块，行标签使用，不会改变标签属性
+    <span class="value">absolute</span>：如果没有父级标签设置<span class="value">relative</span>；当前标签元素是以<span class="tag">body</span>可视区域为起点。如果有父级设置<span class="value">relative</span>，则以父级标签为起点。（脱离文档流，改变标签的属性，类似于<span class="value">inline</span>-<span class="value">block</span>的特性）
+    <span class="value">fixed</span>：表示固定定位
+    <span class="attribute">z-index</span>：1，表示当前标签的层级，当前标签必须使用<span class="attribute">position</span>属性才有效果，取值为数字，不能为负数
+
+<span class="attribute">flex</span>布局：弹性布局
+    使用前需先给容器设置<span class="attribute">display</span>：<span class="attribute">flex</span>
+    属性（容器）：
+        1<span class="class">.flex-direction</span>(伸缩方向)<span class="value">:
+          row（主轴为水平方向，起点在左端）
+          row-reverse（主轴为水平方向，起点在右端）
+          column（主轴为垂直方向，起点在上沿）
+          column-reverse（主轴为垂直方向，起点在下沿）
+        <span class="number">2</span>.flex-wrap:
+              nowrap: 不换行
+              wrap: 换行
+              wrap-reverse： 从下向上换行
+        <span class="number">3</span>.flex-flow：前两个的缩写格式
+        <span class="number">4</span>.<span class="function">justify-content</span>(主轴对齐方式):
+             flex-start    (左对齐)
+             flex-end     (右对齐)
+             center     (居中)
+             space-between     (两端对齐，项目之间的间隔都相等)
+             space-around     (每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍)
+             <span class="function">align-items</span>(交叉轴对齐方式)：
+             flex-start:     (交叉轴的起点对齐)
+             flex-end:     (交叉轴的终点对齐)
+             center:     (交叉轴的中点对齐)
+             baseline:     (项目的第一行文字的基线对齐)
+             stretch:     (如果项目未设置高度或设为auto，将占满整个容器的高度)
+             align-content:     定义了多根轴线的对齐方式，如果项目只有一个轴线，该属性不起作用
+             flex-start:     与交叉轴的起点对齐
+             flex-end:     与交叉轴的终点对齐
+             center:     与交叉轴的中点对齐
+             space-between:     与交叉轴两端对齐，轴线之间的间隔平均分布
+             space-around:     每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+             stretch:     轴线占满整个交叉轴
+
+    属性（项目）：
+          order: 属性定义项目的排列顺序，数值越小，排列越靠前，默认为<span class="number">0</span>。
+          flex-grow: 属性定义项目的放大比例，默认为<span class="number">0</span>，如果空间剩余，该项目讲放大。
+          flex-shrink: 属性定义项目的缩小比例，默认为<span class="number">1</span>，如果空间不足，该项目将缩小。
+          flex-basis: 属性定义了再分配多余空间之前，项目占据的主轴空间，默认值为<span class="number">0</span>，可设固定宽高
+          flex: 前三个属性的缩写，默认值为(<span class="number">0</span>,<span class="number">1</span>,auto),后两个属性可选
+          align-self: 属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性，默认为auto，继承父级，如果没有父级，则等同于stretch</span>
+</code></pre><p>###BFC</p>
+<pre><code>简介：
+FC全称”Formatting Context”, 中文为“格式化上下文”
+BFC全称”<span class="value">Block</span> Formatting Context”, 中文为“块级格式化上下文”
+IFC全称”<span class="value">Block</span> Formatting Context”, 中文为“行级格式化上下文”
+
+BFC的生成
+满足下列CSS声明之一的元素便会生成BFC：
+  根元素
+    * <span class="attribute">float</span>的值不为<span class="attribute">none</span>
+    * <span class="attribute">overflow</span>的值不为<span class="value">visible</span>
+    * <span class="attribute">display</span>的值为<span class="value">inline</span>-<span class="value">block</span>、<span class="tag">table</span>-cell、<span class="tag">table</span>-<span class="tag">caption</span>
+    * <span class="attribute">position</span>的值为<span class="value">absolute</span>或<span class="value">fixed</span>
+
+BFC的约束规则
+生成BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的<span class="attribute">margin</span>特性。在BFC中相邻的块级元素外边距会折叠。
+生成BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）
+内部的Box会在垂直方向上一个接一个的放置
+垂直方向上的距离由<span class="attribute">margin</span>决定。（完整的说法是：属于同一个BFC的两个相邻Box的<span class="attribute">margin</span>会发生重叠，与方向无关。）
+每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而<span class="attribute">position</span>为<span class="value">absolute</span>的元素可以超出他的包含块边界）
+BFC的区域不会与<span class="attribute">float</span>的元素区域重叠
+计算BFC的高度时，浮动子元素也参与计算
+BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/02/26/CSS-beta版/" data-title="温习CSS | Memory" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/02/25/温故html/"  title="温习html">
+ <strong>下一篇：</strong><br/> 
+ <span>温习html
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#css样式表的三种调用方式："><span class="toc-number">1.</span> <span class="toc-text">css样式表的三种调用方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css选择器的分类："><span class="toc-number">2.</span> <span class="toc-text">css选择器的分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css属性"><span class="toc-number">3.</span> <span class="toc-text">css属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性继承："><span class="toc-number">4.</span> <span class="toc-text">属性继承：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布局"><span class="toc-number">5.</span> <span class="toc-text">布局</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://hanmingyang.github.io/" target="_blank" title="韩哥">韩哥</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://luqiqi1225.github.io/" target="_blank" title="陆琦">陆琦</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://chumengxing1121.github.io/" target="_blank" title="褚梦星">褚梦星</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://aoyi551083.github.io/" target="_blank" title="敖艺">敖艺</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zoeyzhou.github.io" target="_blank" title="周叶">周叶</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://athenachu.github.io/" target="_blank" title="汪凌峰">汪凌峰</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wj1213180604.github.io/" target="_blank" title="王娟">王娟</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sundyfuther.github.io/" target="_blank" title="陈晓佳">陈晓佳</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://sh5054.github.io/" target="_blank" title="孙浩">孙浩</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://quanquanxuan.github.io/" target="_blank" title="宣圆圆">宣圆圆</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://baobeiaini.github.io/" target="_blank" title="王贝贝">王贝贝</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://crerich.github.io/" target="_blank" title="程华">程华</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tyl1002353363.github.io/" target="_blank" title="谭于磊">谭于磊</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://yamanai.github.io/" target="_blank" title="张明">张明</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://lck297231489.github.io/" target="_blank" title="刘臣康">刘臣康</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tavey.github.io/" target="_blank" title="王晓伟">王晓伟</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zgmn.github.io/" target="_blank" title="胡月">胡月</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://running11.github.io/" target="_blank" title="邝艳芝">邝艳芝</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://haomark.github.io/" target="_blank" title="郝云鹏">郝云鹏</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://jameblunt1973.github.io/" target="_blank" title="张记文">张记文</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://bairuoqing666.github.io/" target="_blank" title="白若卿">白若卿</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://gcsHaya.github.io/" target="_blank" title="张俊琪">张俊琪</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://weibo0909.github.io/" target="_blank" title="魏传波">魏传波</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://tang0916tang.github.io/" target="_blank" title="张晓翠">张晓翠</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zhuqy.github.io/" target="_blank" title="祝倩莹">祝倩莹</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://quangege.github.io/" target="_blank" title="张涌泉">张涌泉</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://niexiaofei1988.github.io/" target="_blank" title="聂海锋">聂海锋</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://changxiangru.github.io/" target="_blank" title="常相如">常相如</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://xuyanchao.github.io/" target="_blank" title="许颜超">许颜超</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://samguoqiang.github.io/" target="_blank" title="陈国强">陈国强</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.zhangxinxu.com/jq/api14/" target="_blank" title="张鑫旭">张鑫旭</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Zhang Yue">Zhang Yue</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'http://zy8232003.github.io/## e.g. wuchong   your disqus short name.';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe6d1f421bbc9962127a50488f9ed37d1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
